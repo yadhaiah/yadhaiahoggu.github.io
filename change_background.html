@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>background changer</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                margin: auto;
+            }
+            body{
+                text-align: center;
+            }
+            ol{
+                list-style-type: none;
+                display: none;
+            }
+            li{
+                background-color: #555;
+                color: white;
+            }
+            button{
+                margin-top: 10%;
+                padding: 1.5em;
+            }
+            #abcd{
+                padding: 1em;
+                width: 10%;
+                text-align: center;
+                background-color: whitesmoke;
+                color:black;
+                margin-top: 1em;
+                border: 3px solid black;
+            }
+        </style>
+ 
+    </head>
+    <body>
+        <ol>
+            <li class="colour">white</li>
+            <li class="colour">blue</li>
+            <li class="colour">green</li>
+            <li class="colour">yellow</li>
+            <li class="colour">orange</li>
+            <li class="colour">red</li>
+            <li class="colour">violet</li>
+            <li class="colour">purple</li>
+            <li class="colour">aqua</li>
+            <li class="colour">gold</li>
+            <li class="colour">silver</li>
+        </ol>
+        <button onclick=" changer()">Change Color</button>
+        <div id="abcd"></div>
+
+    <script type="text/javascript">
+        var count=0;
+        function changer(){
+            var colour=document.querySelectorAll(" .colour");
+            background(colour);
+        }
+        function background(colour){
+            if(count>=11){
+                console.log("list is restarting");
+                count=0;
+            }
+            else{
+                document.body.style.backgroundColor=colour[count].innerHTML;
+                document.getElementById('abcd').innerHTML=colour[count].innerHTML;
+                console.log(document.getElementsByClassName(".displayer").innerHTML);
+                count++; 
+            }    
+        }
+    </script>
+
+    </body>
+</html>
